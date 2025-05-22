@@ -1,7 +1,20 @@
+'use client';
+import {useState, useEffect, use } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
+import {Amplify} from 'aws-amplify';
+// import outputs from "../../amplify_outputs.json";
+
+// Amplify.configure(outputs);
 
 export default function Home() {
+const [count, setCount] = useState(0);
+useEffect(() => {
+  console.log('Amplify.configure:');
+  console.log(Amplify.getConfig());
+}, []);
+
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
